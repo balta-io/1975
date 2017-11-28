@@ -20,6 +20,7 @@ namespace PaymentContext.Tests
 
         public StudentQueriesTests()
         {
+            _students = new List<Student>();
             for (var i = 0; i <= 10; i++)
             {
                 _students.Add(new Student(
