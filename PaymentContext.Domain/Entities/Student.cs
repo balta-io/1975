@@ -28,12 +28,7 @@ namespace PaymentContext.Domain.Entities
 
         public void AddSubscription(Subscription subscription)
         {
-            var hasSubscriptionActive = false;
-            foreach (var sub in _subscriptions)
-            {
-                if (sub.Active)
-                    hasSubscriptionActive = true;
-            }
+            var hasSubscriptionActive = _subscriptions.Any(s => s.Active);          
 
             AddNotifications(new Contract()
                 .Requires()
